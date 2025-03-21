@@ -1,27 +1,22 @@
 # Answers.sql
--- Create the SalesDB database
 CREATE DATABASE SalesDB;
-
--- Use the SalesDB database
 USE SalesDB;
+CREATE TABLE stocks (TradeDATE CHAR(10),
+                     SPY double,
+                     GLD double,
+                     AMZN double,
+                     KPTI double,
+                     GILD double,
+                     MPC double,
+SELECT * FROM stocks;
+INSERT INTO stocks VALUES(),
 
--- Create the KingEnterprisesSales table
-CREATE TABLE KingEnterprisesSales 
-(
-    SaleID INT PRIMARY KEY AUTO_INCREMENT, -- Unique ID for each sale
-    GoodsName VARCHAR(255), -- Name of the goods sold
-    QuantitySold INT, -- Number of goods sold
-    AmountPerGood DECIMAL(10, 2), -- Price of each good (e.g., 10.50)
-    TotalCost DECIMAL(10, 2) -- Total cost of the sale
-);
-
--- Example: Insert some data (optional)
-INSERT INTO KingEnterprisesSales (GoodsName, QuantitySold, AmountPerGood, TotalCost) VALUES
-('Pencils', 100, 0.50, 50.00),
-('Notebooks', 50, 2.00, 100.00),
-('Erasers', 200, 0.25, 50.00),
-('Rulers', 30, 1.50, 45.00);
-
--- To see the table you just created and the data you added, you can use:
--- SELECT * FROM KingEnterprisesSales;
+TradeDATE	SPY	GLD	AMZN	GOOG	KPTI	GLD	MPC
+1/1/2025	0.002	1.678	0.738	0.463	0.356	0.345	0.234
+3/3/2025	0.045	1.6778	0.378	0.573	0.3765	1.2345	0.346
+4/3/2025	0.467	0.679	0.564	0.355	0.2567	1.456	1.345
+6/3/2025	0.156	0.976	0.098	0.927	0.208	0.0982	0.2876
+9/4/2025	0.357	0.377	0.279	0.276	0.287	0.028	0.286
+![image](https://github.com/user-attachments/assets/0284e291-53ef-4c02-9ea0-541cf520f14e)
+UPDATE stocks SET TradeDATE = str_to_date(TradeDATE, {"%m%d%Y");
 
