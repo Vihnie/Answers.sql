@@ -6,7 +6,8 @@ CREATE DATABASE SalesDB;
 USE SalesDB;
 
 -- Create the KingEnterprisesSales table
-CREATE TABLE KingEnterprisesSales (
+CREATE TABLE KingEnterprisesSales 
+(
     SaleID INT PRIMARY KEY AUTO_INCREMENT, -- Unique ID for each sale
     GoodsName VARCHAR(255), -- Name of the goods sold
     QuantitySold INT, -- Number of goods sold
